@@ -1,0 +1,66 @@
+{
+  "config": {
+    "data_dir": "data",
+    "output_dir": "outputs",
+    "episodes": 5000,
+    "trials": 50,
+    "hard_trials": 30,
+    "hard_sizes": [
+      50,
+      100
+    ],
+    "seed": 42
+  },
+  "evaluation": [
+    {
+      "dataset": "synthetic",
+      "trials": 50,
+      "accuracy": 1.0,
+      "avg_time_sec": 0.023885555267333984
+    },
+    {
+      "dataset": "MUTAG",
+      "trials": 50,
+      "accuracy": 0.84,
+      "avg_time_sec": 0.010472950935363769
+    },
+    {
+      "dataset": "PROTEINS",
+      "trials": 50,
+      "accuracy": 0.94,
+      "avg_time_sec": 0.03780679225921631
+    },
+    {
+      "dataset": "IMDB-BINARY",
+      "trials": 50,
+      "accuracy": 1.0,
+      "avg_time_sec": 0.017789769172668456
+    }
+  ],
+  "hard_graphs": [
+    {
+      "dataset": "hard_graph_n_50",
+      "trials": 30,
+      "rl_accuracy": 0.8,
+      "vf2_accuracy": 0.9333333333333333,
+      "rl_avg_time_sec": 0.04436358610788981,
+      "vf2_avg_time_sec": 0.10197771390279134
+    },
+    {
+      "dataset": "hard_graph_n_100",
+      "trials": 30,
+      "rl_accuracy": 0.8333333333333334,
+      "vf2_accuracy": 0.9666666666666667,
+      "rl_avg_time_sec": 0.19682961304982502,
+      "vf2_avg_time_sec": 0.8588226636250814
+    }
+  ],
+  "artifacts": {
+    "model": "outputs/actor_critic_model.pt",
+    "evaluation_csv": "outputs/evaluation_results.csv",
+    "hard_graph_csv": "outputs/hard_graph_results.csv",
+    "training_loss_plot": "outputs/training_loss.png",
+    "evaluation_accuracy_plot": "outputs/evaluation_accuracy.png",
+    "rl_vs_vf2_plot": "outputs/rl_vs_vf2_accuracy.png"
+  }
+}
