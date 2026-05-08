@@ -425,16 +425,6 @@ def save_csv(path, rows):
 def save_plots(output_dir, losses, eval_rows, hard_rows):
     import matplotlib.pyplot as plt
 
-    if losses:
-        plt.figure()
-        plt.plot(losses)
-        plt.xlabel("Training update")
-        plt.ylabel("Loss")
-        plt.title("Training loss")
-        plt.tight_layout()
-        plt.savefig(output_dir / "training_loss.png")
-        plt.close()
-
     if eval_rows:
         plt.figure()
         names = [row["dataset"] for row in eval_rows]
@@ -525,7 +515,6 @@ def main():
             "model": str(model_path),
             "evaluation_csv": str(output_dir / "evaluation_results.csv"),
             "hard_graph_csv": str(output_dir / "hard_graph_results.csv"),
-            "training_loss_plot": str(output_dir / "training_loss.png"),
             "evaluation_accuracy_plot": str(output_dir / "evaluation_accuracy.png"),
             "rl_vs_vf2_plot": str(output_dir / "rl_vs_vf2_accuracy.png"),
         },
